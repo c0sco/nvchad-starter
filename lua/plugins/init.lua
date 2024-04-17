@@ -21,23 +21,23 @@ return {
   	opts = {
   		ensure_installed = {
   			"gopls", "lua-language-server", "stylua",
-  			"html-lsp", "css-lsp" , "prettier"
+  			"html-lsp", "css-lsp" , "prettier", "terraform-ls"
   		},
   	},
   },
   --
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+  	"nvim-treesitter/nvim-treesitter",
+  	opts = {
+  		ensure_installed = {
+  			"vim", "lua", "vimdoc", "go",
+        "html", "css", "hcl", "terraform",
+  		},
+  	},
+  },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = "go",
+    ft = {"go", "terraform"},
     opts = function()
       return require "configs.null-ls"
     end,

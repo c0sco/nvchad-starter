@@ -16,6 +16,15 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- terraform
+lspconfig.terraformls.setup{
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  cmd = {"terraform-ls", "serve"},
+  root_dir = util.root_pattern("main.tf", ".git"),
+}
+
 -- typescript
 lspconfig.tsserver.setup {
   on_attach = on_attach,
