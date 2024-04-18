@@ -7,8 +7,8 @@ local opts = {
     null_ls.builtins.formatting.goimports_reviser,
     null_ls.builtins.formatting.prettier.with({
       filetypes = {
-        "javascript",
-        "typescript",
+        "javascript", "javascriptreact",
+        "typescript", "typescriptreact",
         "css", "scss", "html", "json",
         "yaml",
         "markdown", "md", "txt",

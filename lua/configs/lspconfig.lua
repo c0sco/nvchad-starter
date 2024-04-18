@@ -30,6 +30,7 @@ lspconfig.tsserver.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
+  root_dir = util.root_pattern("package.json", "yarn.lock", ".git")
 }
 
 -- golang
