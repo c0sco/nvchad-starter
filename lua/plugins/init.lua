@@ -24,7 +24,7 @@ return {
         "html-lsp", "css-lsp", "prettier", "terraform-ls",
         "typescript-language-server", "codelldb",
         -- for nix, gotta install this through configuration.nx
-        -- "rust-analyzer",
+        "rust-analyzer",
       },
     },
   },
