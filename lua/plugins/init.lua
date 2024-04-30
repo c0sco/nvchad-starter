@@ -17,28 +17,29 @@ return {
   },
   --
   {
-  	"williamboman/mason.nvim",
-  	opts = {
-  		ensure_installed = {
-  			"gopls", "lua-language-server", "stylua",
-  			"html-lsp", "css-lsp", "prettier", "terraform-ls",
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "gopls", "lua-language-server", "stylua",
+        "html-lsp", "css-lsp", "prettier", "terraform-ls",
         "typescript-language-server", "codelldb",
         -- for nix, gotta install this through configuration.nx
         -- "rust-analyzer",
-  		},
-  	},
+      },
+    },
   },
   --
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc", "go", "markdown",
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim", "lua", "vimdoc", "go", "markdown",
         "html", "css", "hcl", "terraform", "typescript",
-        "tsx", "javascript", "jsx", 'properties', "c",
-        "rust"
-  		},
-  	},
+        "tsx", "javascript", "properties", "c", "rust"
+        -- this seems to mess up file loading, not sure why
+        -- "jsx"
+      },
+    },
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
