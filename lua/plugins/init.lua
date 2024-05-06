@@ -35,7 +35,7 @@ return {
       ensure_installed = {
         "vim", "lua", "vimdoc", "go", "markdown",
         "html", "css", "hcl", "terraform", "typescript",
-        "tsx", "javascript", "properties", "c", "rust"
+        "tsx", "javascript", "properties", "c", "rust", "json"
         -- this seems to mess up file loading, not sure why
         -- "jsx"
       },
