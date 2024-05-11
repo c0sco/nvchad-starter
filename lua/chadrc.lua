@@ -7,10 +7,10 @@ local M = {}
 M.ui = {
 	theme = "solarized_dark",
 
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
+	hl_override = {
+		Comment = { italic = true },
+		["@comment"] = { italic = true },
+	},
 }
 
 -- Set our shell depending on OS
@@ -26,11 +26,14 @@ elseif vim.loop.os_uname().sysname == "Linux" then
   vim.o.shell = "zsh"
 end
 
+-- vim settings
 vim.o.tabstop = 2
 vim.o.expandtab = true
 vim.o.ai = true
 vim.o.si = true
 vim.o.wrap = true
+vim.cmd('set lbr')
+
 -- Start `insert` mode automatically when entering a terminal buffer
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"term://*"},
