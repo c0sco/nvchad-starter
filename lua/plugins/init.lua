@@ -40,7 +40,7 @@ return {
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
-    ft = {"go", "terraform", "typescript", "javascript", "javascriptreact", "typescriptreact", "rust" },
+    ft = {"go", "terraform", "typescript", "javascript", "javascriptreact", "typescriptreact", },
     opts = function()
       return require "configs.null-ls"
     end,
