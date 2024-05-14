@@ -5,7 +5,7 @@
 local M = {}
 
 M.ui = {
-	theme = "solarized_dark",
+	theme = "solarized_osaka",
 
 	hl_override = {
 		Comment = { italic = true },
@@ -38,6 +38,11 @@ vim.cmd('set lbr')
 vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   pattern = {"term://*"},
   command = "startinsert"
+})
+
+-- Don't let auto-session add line numbers to terminals
+vim.api.nvim_create_autocmd({"TermOpen"}, {
+  command = "setlocal listchars= nonumber norelativenumber"
 })
 
 return M
