@@ -58,4 +58,8 @@ vim.api.nvim_create_autocmd({'FileChangedShellPost'}, {
   command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
 })
 
+vim.keymap.set({'n', 'i'}, "<C-S-P>", function ()
+ vim.cmd('Glow')
+end, {})
+
 return M
