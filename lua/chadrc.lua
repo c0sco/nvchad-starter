@@ -45,4 +45,14 @@ vim.api.nvim_create_autocmd({"TermOpen"}, {
   command = "setlocal listchars= nonumber norelativenumber"
 })
 
+-- Reread file changes from disk
+-- From https://unix.stackexchange.com/a/760218
+vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
+  command = "checktime"
+})
+
+vim.api.nvim_create_autocmd({"BufEnter", "FocusGained"}, {
+  command = "checktime"
+})
+
 return M
