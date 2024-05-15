@@ -47,12 +47,15 @@ vim.api.nvim_create_autocmd({"TermOpen"}, {
 
 -- Reread file changes from disk
 -- From https://unix.stackexchange.com/a/760218
-vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
-  command = "checktime"
+vim.api.nvim_create_autocmd({'FocusGained', 'BufEnter', 'CursorHold', 'CursorHoldI'}, {
+  command = "if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif",
 })
 
-vim.api.nvim_create_autocmd({"BufEnter", "FocusGained"}, {
-  command = "checktime"
+-- Notification after file change
+-- https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+vim.api.nvim_create_autocmd({'FileChangedShellPost'}, {
+  pattern = '*',
+  command = "echohl WarningMsg | echo 'File changed on disk. Buffer reloaded.' | echohl None",
 })
 
 return M
